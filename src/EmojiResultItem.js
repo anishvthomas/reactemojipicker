@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-//import './EmojiResultList.css';
+import './EmojiResultItem.css';
 
 class EmojiResultItem extends Component {
 
   render() {
     return (
       <div className="EmojiResultItem">
-        <div>{this.props.name}
-        {this.props.symbol}
+        <div >
+        <span className="symbol">{this.props.symbol}</span>
+        <span className="item">{this.props.name}</span>
         </div>
       </div>
     );

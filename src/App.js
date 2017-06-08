@@ -17,7 +17,7 @@ class App extends Component {
         this.setState({
             filteredEmojiResults:filterEmojis(text)
         });
-
+ 
     }
   render() {
     return (
