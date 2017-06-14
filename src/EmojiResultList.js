@@ -19,7 +19,7 @@ class EmojiResultList extends Component {
       <div className="EmojiResultList">
         <div>
         {this.props.resultList.map((emojiItem)=>{
-            return (<EmojiResultItem
+            return (<EmojiResultItem key={emojiItem.name}
                 name={emojiItem.name}
                 symbol={emojiItem.symbol} />)
         })}

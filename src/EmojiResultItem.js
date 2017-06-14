@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './EmojiResultItem.css';
 
 class EmojiResultItem extends Component {
@@ -13,6 +14,11 @@ class EmojiResultItem extends Component {
       </div>
     );
   }
+}
+
+EmojiResultItem.propTypes = {
+    symbol:PropTypes.string,
+    name:PropTypes.string
 }
 
 export default EmojiResultItem;

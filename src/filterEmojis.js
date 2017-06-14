@@ -73,6 +73,7 @@ export default function filterEmojis(searchText,maxResults) {
         return true;
         if(emoji.keywords.includes(searchText))
         return true;
+        return false;
     }
     );
 }

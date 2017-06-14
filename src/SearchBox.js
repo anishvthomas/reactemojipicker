@@ -10,7 +10,7 @@ class SearchBox extends Component {
     return (
       <div className="SearchBox">
         <div>
-            <input type="text" value={this.searchText} onChange={this.handleChange}/>
+            <input type="text" value={this.searchText} onChange={this.handleChange} placeholder="Search ..."/>
         </div>
       </div>
     );
