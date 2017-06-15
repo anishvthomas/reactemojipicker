@@ -9,7 +9,8 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state ={
-            filteredEmojiResults:filterEmojis('')
+            filteredEmojiResults:filterEmojis(''),
+            selectedEmoji:''
         }
     }
 
@@ -17,14 +18,22 @@ class App extends Component {
         this.setState({
             filteredEmojiResults:filterEmojis(text)
         });
- 
+
     }
+
+    handleEmojiSelection=(e)=>
+    {
+        this.setState({selectedEmoji:e});
+    }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <SearchBox searchChange={this.handleSearchChange}/>
-        <EmojiResultList resultList={this.state.filteredEmojiResults}/>
+        <SearchBox searchChange={this.handleSearchChange} emojiSelected={this.state.selectedEmoji}
+        changeEmojiSelection={this.handleEmojiSelection}/>
+        <EmojiResultList resultList={this.state.filteredEmojiResults}
+        changeEmojiSelection={this.handleEmojiSelection}/>
     </div>
     );
   }

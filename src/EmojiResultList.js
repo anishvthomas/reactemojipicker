@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 //import './EmojiResultList.css';
 import EmojiResultItem from './EmojiResultItem.js';
 
@@ -10,10 +11,11 @@ class EmojiResultList extends Component {
             searchText:''
                 }
     }
-    handleChange=(event) => {
-//        this.setState({searchText:event.target.value});
-//        console.log("this.state.searchText- >"+this.state.searchText);
+    handleSelect=(e)=>{
+        this.props.changeEmojiSelection(e);
     }
+
+
   render() {
     return (
       <div className="EmojiResultList">
@@ -21,12 +23,14 @@ class EmojiResultList extends Component {
         {this.props.resultList.map((emojiItem)=>{
             return (<EmojiResultItem key={emojiItem.name}
                 name={emojiItem.name}
-                symbol={emojiItem.symbol} />)
+                symbol={emojiItem.symbol} selectEmoji={this.handleSelect} />)
         })}
         </div>
       </div>
     );
   }
 }
-
+EmojiResultList.propTypes = {
+    resultList:PropTypes.array.isRequired
+}
 export default EmojiResultList;

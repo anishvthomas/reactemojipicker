@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import './EmojiResultItem.css';
 
 class EmojiResultItem extends Component {
+    handleClick=()=>{
+    this.props.selectEmoji(this.props.symbol);
+    }
 
   render() {
     return (
       <div className="EmojiResultItem">
-        <div >
+        <div onClick={this.handleClick} >
         <span className="symbol">{this.props.symbol}</span>
         <span className="item">{this.props.name}</span>
         </div>
